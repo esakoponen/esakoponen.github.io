@@ -47,9 +47,10 @@ about:
     - name: explore/elixir
     - name: explore/pi
     - name: explore/spec-driven-development
+    - name: chore/azure
     - name: chore/web-security
 uses:
-  command: btop --view stack — daily usage && working memory
+  command: btop --user esakoponen
   cpu:
     label: CPU [daily usage]
     usage:
@@ -62,12 +63,8 @@ uses:
       - label: terminal
         percent: 60
         detail: kitty
-      - label: cloud
-        percent: 40
-        detail: azure
-        note: (functions, foundry)
   memory:
-    label: MEM [working memory]
+    label: MEM [now]
     usage:
       - text: building personal blog
       - text: updating this page
