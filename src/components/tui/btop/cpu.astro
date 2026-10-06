@@ -7,35 +7,54 @@ export interface Props {
   title?: string;
   usage: {
     label: string;
-    percent: number;
-    detail: string;
-    note?: string;
+    /** la primera herramienta es la favorita; `share` = % del tiempo, suman 100 */
+    tools: { name: string; share: number }[];
   }[];
 }
 
 const { title = "CPU [daily usage]", usage } = Astro.props;
+const CELLS = 10;
+
+/** reparte las 10 celdas redondeando sobre el acumulado, así siempre suman 10 */
+function toCells(tools: { share: number }[]): number[] {
+  let acc = 0;
+  return tools.map(({ share }) => {
+    const from = Math.round((acc / 100) * CELLS);
+    acc += share;
+    return Math.round((Math.min(acc, 100) / 100) * CELLS) - from;
+  });
+}
+
+const color = (i: number) => (i === 0 ? "text-accent" : "text-complement");
 ---
 
 <Container>
   <Label>{title}</Label>
   <Content>
-    <div class="font-mono grid grid-cols-12 items-center gap-x-3 gap-y-1 ">
-      {usage.map(({ label, percent, detail, note }) => (
-        <Fragment>
-          <span class="col-span-3 sm:col-span-2">{label.padEnd(10)}</span>
-          <span class="col-span-9 sm:col-span-10 md:col-span-5 flex items-center gap-2">
-            <span class="flex-1 h-4 overflow-hidden bg-accent/10">
-              <span
-                class="block h-full bg-accent"
-                style={`width: ${percent}%`}
-              />
+    <ul class="font-mono flex flex-col gap-y-1">
+      {usage.map(({ label, tools }) => {
+        const cells = toCells(tools);
+        const empty = CELLS - cells.reduce((a, b) => a + b, 0);
+        return (
+          <li class="flex items-center gap-3">
+            <span class="w-[9ch] shrink-0">{label}</span>
+            <span class="shrink-0 whitespace-pre" aria-hidden="true">
+              {cells.map((n, i) => (
+                <span class={color(i)}>{"■".repeat(n)}</span>
+              ))}
+              {empty > 0 && <span class="text-dim">{"□".repeat(empty)}</span>}
             </span>
-            <span class="text-dim whitespace-pre"><span class="opacity-0">{percent < 100 ? "0" : ""}</span>{percent}%</span>
-          </span>
-
-          <span class="col-span-12 ml-2 md:ml-0 md:col-span-5 gap-2"><span class="line-clamp-1" >{detail} {note ? <span class="text-dim">{note}</span> : null}</span> </span>
-        </Fragment>
-      ))}
-    </div>
+            <span class="min-w-0 truncate">
+              {tools.map(({ name }, i) => (
+                <>
+                  {i > 0 && <span class="text-dim"> / </span>}
+                  <span class={color(i)}>{name}</span>
+                </>
+              ))}
+            </span>
+          </li>
+        );
+      })}
+    </ul>
   </Content>
 </Container>

@@ -22,6 +22,8 @@
 	--color-fg: #d8d8d8;
 	--color-dim: #5e6470;
 	--color-accent: #1793d1;
+	/* complementario del accent (tono opuesto, contraste similar sobre bg) */
+	--color-complement: #e65f1c;
 
 	/* colores del logo ascii (ansi 1-3) */
 	--color-c1: #1793d1;

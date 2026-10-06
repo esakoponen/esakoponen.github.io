@@ -54,15 +54,20 @@ uses:
   cpu:
     label: CPU [daily usage]
     usage:
+      # first tool = the one I reach for (blue), the rest share the remainder;
+      # shares are % of time and should sum to 100 (drawn as 10 cells)
       - label: editor
-        percent: 100
-        detail: neovim
+        tools:
+          - { name: neovim, share: 80 }
+          - { name: vscode, share: 20 }
       - label: harness
-        percent: 80/20
-        detail: claude code + pi
+        tools:
+          - { name: pi, share: 25 }
+          - { name: claude code, share: 75 }
       - label: terminal
-        percent: 60
-        detail: kitty
+        tools:
+          - { name: kitty, share: 90 }
+          - { name: powershell, share: 10 }
   memory:
     label: MEM [now]
     usage:
