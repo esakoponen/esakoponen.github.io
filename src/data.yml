@@ -1,7 +1,7 @@
 site:
   title: astro-distro
   description: Astro + Tailwind fastfetch-style portfolio template. TUI components, themeable systems, projects synced from GitHub via YAML.
-  url: https://example.com
+  url: https://esakoponen.github.io
   author: astro
   handle_suffix: distro
   image: /og.png
