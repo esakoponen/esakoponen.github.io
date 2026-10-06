@@ -58,19 +58,14 @@ const themeFontsCss = config.systems
 
     <!-- ── footer ────────────────────────────────────────── -->
     <footer class="mx-auto max-w-3xl mt-10 text-dim">
-      <div class="flex flex-wrap justify-between gap-2 text-[0.85rem]">
-        <div class="flex flex-wrap items-center gap-2 text-[0.85rem]">
-          <span class="text-accent">●</span>
-          <span>{config.site.footer?.status ?? "session closed"}</span>
-          <span class="text-border">·</span>
-          <span>{config.site.footer?.errors ?? 0} errors</span>
-          <span class="text-border">·</span>
-          <span>{config.site.footer?.warnings ?? 0} warnings</span>
-          <span class="text-border">·</span>
-          <span>uptime {config.site.footer?.uptime ?? "0y"}</span>
-          <span class="text-border">·</span>
-        </div>
-      </div>
+      {config.site.footer && (
+        <figure class="flex flex-wrap items-center gap-2 text-[0.85rem]">
+          <span class="text-accent" aria-hidden="true">●</span>
+          <blockquote>"{config.site.footer.quote}"</blockquote>
+          <figcaption>-{config.site.footer.author}</figcaption>
+          <span class="text-accent" aria-hidden="true">●</span>
+        </figure>
+      )}
     </footer>
   </body>
 </html>

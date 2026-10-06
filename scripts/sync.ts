@@ -59,10 +59,8 @@ interface Data {
 		locale: string;
 		type: string;
 		footer?: {
-			status: string;
-			errors: number;
-			warnings: number;
-			uptime: string;
+			quote: string;
+			author: string;
 		};
 	};
 	current: string;

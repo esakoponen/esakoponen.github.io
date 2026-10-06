@@ -16,10 +16,8 @@ site:
   type: website
   default_theme: arch
   footer:
-    status: session closed
-    errors: 0
-    warnings: 0
-    uptime: 5y
+    quote: Code is easier to write than it is to read.
+    author: software engineering proverb
 
 current: arch
 booted_at: '2026-09-03'
