@@ -14,15 +14,24 @@ export interface Props {
 }
 
 const { items } = Astro.props;
+
+/** separa el tipo estilo conventional commit ("feat: …") y los años finales ("(2016–24)") del resto */
+const splitType = (text: string) => {
+  const m = text.match(/^(\w+:)?(.*?)(\s*\(\d[^)]*\))?$/s);
+  return { type: m?.[1] ?? "", rest: m?.[2] ?? text, years: m?.[3] ?? "" };
+};
 ---
 
 <Container>
   <Label>bio</Label>
   <Content>
-    {items.map(item => (
+    {items.map(item => {
+      const { type, rest, years } = splitType(item.text);
+      return (
       <Paragraph>
-        {item.icon && <span class="font-medium text-accent mr-2" class:list={[item.icon === "??" ? "text-dim" :  ""]}>{item.icon}</span>}<span>{item.text}</span>
+        {item.icon && <span class="font-medium text-accent mr-2" class:list={[item.icon === "??" ? "text-dim" :  ""]}>{item.icon}</span>}<span>{type && <span class="text-accent">{type}</span>}{rest}{years && <span class="text-dim">{years}</span>}</span>
       </Paragraph>
-    ))}
+      );
+    })}
   </Content>
 </Container>
