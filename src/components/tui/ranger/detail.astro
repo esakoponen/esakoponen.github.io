@@ -8,8 +8,6 @@ export interface Props {
     name: string;
     description: string;
     repo: string;
-    stars: string;
-    updated: string;
     url: string;
     homepage?: string;
   }[];
@@ -25,7 +23,6 @@ const { projects } = Astro.props;
       <Content>
         <div class="mb-2">{project.description}</div>
         <div class="text-dim">{project.repo}</div>
-        <div class="text-dim">{project.stars}· {project.updated}</div>
         <a
           class="mt-[0.4rem] inline-block text-accent hover:underline"
           href={project.url}

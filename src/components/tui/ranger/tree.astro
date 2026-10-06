@@ -6,7 +6,7 @@ export interface Props {
   /** directorio raíz mostrado en el árbol */
   root?: string;
   /** proyectos listados en el árbol */
-  projects: { name: string; size: string; date: string }[];
+  projects: { name: string }[];
   /** índice del proyecto seleccionado al cargar (default 0) */
   selectedIndex?: number;
 }
@@ -31,10 +31,6 @@ const { root = "/home/astro", projects, selectedIndex = 0 } = Astro.props;
                data-tree-item={i}
                class={`cursor-pointer hover:text-accent ${i === selectedIndex ? "text-accent" : ""}`}
              >{project.name}</button>
-             <div class="flex gap-2 w-full justify-end">
-               <span class="text-dim">{project.size}</span>
-               <span class="text-dim">{project.date}</span>
-             </div>
           </div>
         );
       })}
