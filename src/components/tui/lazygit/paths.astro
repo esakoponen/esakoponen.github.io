@@ -17,7 +17,7 @@ const { paths } = Astro.props;
 ---
 
 <Container>
-  <Label>paths (local)</Label>
+  <Label>branches</Label>
   <Content>
     {paths.map(({ name, current }) => (
       <Paragraph class={current ? "" : "ml-3.5"}>
