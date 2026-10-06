@@ -60,6 +60,7 @@ function toHtml(source: string): string {
 ---
 
 <pre
+  aria-hidden="true"
   {...rest}
   class={cn("leading-[0.82] md:leading-[0.75] whitespace-pre", className)}
   set:html={`<span class="text-2xs">${toHtml(logo)}</span>`}
