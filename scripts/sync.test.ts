@@ -44,7 +44,27 @@ describe("buildProjectFromUrl", () => {
 		stargazers_count: 1500,
 		size: 2048,
 		updated_at: "2024-01-15T10:00:00Z",
+		language: "TypeScript",
+		topics: ["astro", "tailwind"],
 	};
+
+	test("derives stack from language + topics", () => {
+		const project = buildProjectFromUrl(mockRepo, mockRepo.html_url);
+		expect(project.stack).toEqual(["TypeScript", "astro", "tailwind"]);
+	});
+
+	test("prefers a hand-picked stack", () => {
+		const project = buildProjectFromUrl(mockRepo, mockRepo.html_url, ["Bun"]);
+		expect(project.stack).toEqual(["Bun"]);
+	});
+
+	test("stack is empty without language or topics", () => {
+		const project = buildProjectFromUrl(
+			{ ...mockRepo, language: null, topics: undefined },
+			mockRepo.html_url,
+		);
+		expect(project.stack).toEqual([]);
+	});
 
 	test("formats stars in k", () => {
 		const project = buildProjectFromUrl(mockRepo, mockRepo.html_url);

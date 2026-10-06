@@ -7,7 +7,7 @@ export interface Props {
   projects: {
     name: string;
     description: string;
-    repo: string;
+    stack: string[];
     url: string;
     homepage?: string;
   }[];
@@ -22,21 +22,25 @@ const { projects } = Astro.props;
       <Label>{project.name}</Label>
       <Content>
         <div class="mb-2">{project.description}</div>
-        <div class="text-dim">{project.repo}</div>
-        <a
-          class="mt-[0.4rem] inline-block text-accent hover:underline"
-          href={project.url}
-          target="_blank"
-          rel="noopener"
-          >→ repo</a
-        >
+        <div>
+          {project.stack.length > 0 && (
+            <span class="text-dim">{project.stack.join(" + ")} </span>
+          )}
+          <a
+            class="text-accent hover:underline"
+            href={project.url}
+            target="_blank"
+            rel="noopener"
+            >{"-> repo"}</a
+          >
+        </div>
         {project.homepage && (
           <a
             class="text-accent hover:underline"
             href={project.homepage}
             target="_blank"
             rel="noopener"
-            >→ visit site</a
+            >{"-> visit site"}</a
           >
         )}
       </Content>

@@ -12,8 +12,12 @@ export interface Project {
 	url: string;
 	size: string;
 	date: string;
+	stack: string[];
 	homepage?: string;
 }
+
+/** data.yml entry: a bare repo URL, or a URL with a hand-picked stack */
+export type ProjectEntry = string | { url: string; stack?: string[] };
 
 export interface GHRepo {
 	full_name: string;
@@ -24,6 +28,8 @@ export interface GHRepo {
 	stargazers_count: number;
 	size: number;
 	updated_at: string;
+	language: string | null;
+	topics?: string[];
 }
 
 const MONTHS = [
@@ -119,7 +125,11 @@ export async function fetchRepo(
 	return (await res.json()) as GHRepo;
 }
 
-export function buildProjectFromUrl(repo: GHRepo, url: string): Project {
+export function buildProjectFromUrl(
+	repo: GHRepo,
+	url: string,
+	stack?: string[],
+): Project {
 	const description = (repo.description ?? "").trim();
 	const project: Project = {
 		name: repo.name,
@@ -132,6 +142,11 @@ export function buildProjectFromUrl(repo: GHRepo, url: string): Project {
 		updated: formatRelative(repo.updated_at),
 		size: formatSize(repo.size),
 		date: formatDate(repo.updated_at),
+		stack:
+			stack ??
+			[repo.language, ...(repo.topics ?? [])].filter((s): s is string =>
+				Boolean(s),
+			),
 		url,
 	};
 	if (repo.homepage) project.homepage = repo.homepage;

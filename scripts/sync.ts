@@ -29,6 +29,7 @@ import {
 	fetchRepo,
 	type GHRepo,
 	type Project,
+	type ProjectEntry,
 	parseRepoUrl,
 } from "./lib/project.ts";
 
@@ -94,7 +95,7 @@ interface Data {
 		command: string;
 		root: string;
 	};
-	projects: string[];
+	projects: ProjectEntry[];
 }
 
 interface CacheEntry {
@@ -162,7 +163,7 @@ async function fetchRepoCached(
 }
 
 async function reconcileProjects(
-	queueUrls: string[],
+	entries: ProjectEntry[],
 	ttlMs: number,
 ): Promise<{
 	projects: Project[];
@@ -190,7 +191,9 @@ async function reconcileProjects(
 	let refreshed = 0;
 	let skipped = 0;
 
-	for (const url of queueUrls) {
+	for (const entry of entries) {
+		const { url, stack } =
+			typeof entry === "string" ? { url: entry, stack: undefined } : entry;
 		const prev = byUrl.get(url);
 		const parts = parseRepoUrl(url);
 		if (!parts) {
@@ -212,7 +215,7 @@ async function reconcileProjects(
 			if (prev) next.push(prev);
 			continue;
 		}
-		const fresh = buildProjectFromUrl(repo, url);
+		const fresh = buildProjectFromUrl(repo, url, stack);
 		if (prev) {
 			Object.assign(prev, fresh);
 			next.push(prev);

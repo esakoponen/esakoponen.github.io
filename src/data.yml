@@ -64,10 +64,10 @@ uses:
         detail: neovim
       - label: harness
         percent: 80/20
-        detail: claude code / pi
+        detail: claude code + pi
       - label: terminal
         percent: 60
-        detail: kitty + git
+        detail: kitty
       - label: cloud
         percent: 40
         detail: azure
@@ -96,7 +96,10 @@ contact:
 projects_ui:
   command: ranger /home/mossrift
   root: /home/mossrift
+# entry: repo URL, or { url, stack } to list the stack by hand
+# (without `stack`, GitHub's language + topics are used)
 projects:
-  - https://github.com/esakoponen/esakoponen.github.io
+  - url: https://github.com/esakoponen/esakoponen.github.io
+    stack: [Astro, TypeScript, Tailwind CSS, Bun]
   - https://github.com/esakoponen/suurhamara-kronikka
   - https://github.com/esakoponen/job-interview-training
