@@ -31,11 +31,7 @@ about:
   command: git log --oneline
   status:
     branch: main
-    since: 2026
-    ahead: 1
-    behind: 0
-    modified: 2
-    untracked: 3
+    since: 2008
   bio:
     - text: 'feat: make AI agents measurable (2026)'
     - text: 'feat: carbon-footprint APIs for energy customers (2024)'
