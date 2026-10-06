@@ -76,15 +76,14 @@ interface Data {
 	about: {
 		command: string;
 		status: Record<string, unknown>;
-		bio: { icon: string; text: string }[];
+		bio: { icon?: string; text: string }[];
 		paths: { name: string; current?: boolean }[];
 	};
 	uses: {
 		command: string;
 		cpu: Record<string, unknown>;
 		memory: Record<string, unknown>;
-		hardware: Record<string, unknown>;
-		peripherals: Record<string, unknown>;
+		afk: Record<string, unknown>;
 	};
 	contact: {
 		command: string;

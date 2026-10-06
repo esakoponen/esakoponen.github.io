@@ -4,6 +4,7 @@ import Content from "@/components/tui/commons/content.astro";
 import Label from "@/components/tui/commons/label.astro";
 
 export interface Props {
+  title?: string;
   usage: {
     label: string;
     percent: number;
@@ -12,11 +13,11 @@ export interface Props {
   }[];
 }
 
-const { usage } = Astro.props;
+const { title = "CPU [daily usage]", usage } = Astro.props;
 ---
 
 <Container>
-  <Label>CPU [daily usage]</Label>
+  <Label>{title}</Label>
   <Content>
     <div class="font-mono grid grid-cols-12 items-center gap-x-3 gap-y-1 ">
       {usage.map(({ label, percent, detail, note }) => (

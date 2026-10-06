@@ -55,49 +55,45 @@ about:
     - name: explore/spec-driven-development
     - name: chore/web-security
 uses:
-  command: btop --view stack — daily usage && hardware
+  command: btop --view stack — daily usage && working memory
   cpu:
     label: CPU [daily usage]
     usage:
       - label: editor
         percent: 100
         detail: neovim
+      - label: harness
+        percent: 80/20
+        detail: claude code / pi
       - label: terminal
         percent: 60
-        detail: kitty
-      - label: browser
-        percent: 20
-        detail: firefox
-      - label: notes
-        percent: 10
-        detail: obsidian
-        note: (markdown sync)
-      - label: music
-        percent: 10
-        detail: navidrome
-        note: (lastfm scrobbling)
-      - label: theme
-        percent: 50
-        detail: tokyo night
-      - label: font
+        detail: kitty + git
+      - label: cloud
         percent: 40
-        detail: Noto Sans Mono
+        detail: azure
+        note: (functions, foundry)
   memory:
-    used: 5
-    total: 31
-    theme: tokyo night
-    themePercent: 50
-  hardware:
-    label: hardware
-    device: Dell XPS
-    ram: 32 GB
-    os: Arch Linux x86_64
-  peripherals:
-    label: peripherals
-    keyboard: steelseries
-    mouse: Logitech
-    headphones: generic
-    monitor: 16" 4K built-in
+    label: MEM [working memory]
+    usage:
+      - label: blog
+        percent: 5
+        detail: modifying astro template
+      - label: portfolio
+        percent: 90
+        detail: updating
+      - label: civ 6
+        percent: 42
+        detail: hotseat
+        note: (105/250 turns)
+      - label: dev
+        percent: 5
+        detail: tournament planner
+        note: (drafting)
+  afk:
+    label: afk
+    items:
+      - key: mtb
+        value: Orbea Oiz M30
 contact:
   command: mutt -f firstname.lastname[at]gmail.com
   email: firstname.lastname[at]gmail.com

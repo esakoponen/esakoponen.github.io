@@ -50,7 +50,7 @@ All 26: `arch`, `archcraft`, `debian`, `ubuntu`, `linuxmint`, `kali`, `fedora`, 
     │   ├── section-title.astro
     │   ├── logos/                    # fastfetch-style ASCII logos
     │   └── tui/                      # TUI-style sections
-    │       ├── btop/                 # CPU / memory / hardware / peripherals
+    │       ├── btop/                 # CPU / working memory / afk
     │       ├── lazygit/              # bio + status + paths
     │       ├── mutt/                 # contact + inbox
     │       └── ranger/               # projects tree + detail
@@ -76,7 +76,7 @@ current:         # active system slug
 booted_at:       # ISO timestamp for the live-computed uptime
 host:            # hardware info (manual, doesn't change often)
 about:           # bio, paths, lazygit-style status block
-uses:            # btop: cpu/memory/hardware/peripherals
+uses:            # btop: cpu/working memory/afk
 contact:         # email, inbox
 projects_ui:     # projects section command + root
 projects:        # list of GitHub repo URLs to fetch

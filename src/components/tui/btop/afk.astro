@@ -1,0 +1,31 @@
+---
+import Container from "@/components/tui/commons/container.astro";
+import Content from "@/components/tui/commons/content.astro";
+import Label from "@/components/tui/commons/label.astro";
+
+export interface Props {
+  afk: {
+    label?: string;
+    items: { key: string; value: string }[];
+  };
+}
+
+const { afk } = Astro.props;
+---
+
+<Container>
+  <Label>{afk.label ?? "afk"}</Label>
+  <Content>
+    <div class="font-mono flex flex-wrap items-center gap-x-2 gap-y-1">
+      {afk.items.map(({ key, value }, i) => (
+        <Fragment>
+          {i > 0 && <span class="text-dim">·</span>}
+          <span>
+            <span class="text-fg">{key}</span>:
+            <span class="text-accent"> {value}</span>
+          </span>
+        </Fragment>
+      ))}
+    </div>
+  </Content>
+</Container>
