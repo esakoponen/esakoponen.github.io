@@ -59,10 +59,10 @@ const themeFontsCss = config.systems
     <!-- ── footer ────────────────────────────────────────── -->
     <footer class="mx-auto max-w-3xl mt-10 text-dim">
       {config.site.footer && (
-        <figure class="flex flex-wrap items-center gap-2 text-[0.85rem]">
+        <figure class="flex flex-col items-center gap-1 text-center text-[0.85rem]">
           <span class="text-accent" aria-hidden="true">●</span>
           <blockquote>"{config.site.footer.quote}"</blockquote>
-          <figcaption>-{config.site.footer.author}</figcaption>
+          <figcaption>~ {config.site.footer.author} ~</figcaption>
           <span class="text-accent" aria-hidden="true">●</span>
         </figure>
       )}
