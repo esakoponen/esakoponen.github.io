@@ -1,0 +1,32 @@
+---
+import Container from "@/components/tui/commons/container.astro";
+import Content from "@/components/tui/commons/content.astro";
+import Label from "@/components/tui/commons/label.astro";
+import config from "@/config.json";
+
+const { items } = config.sections.reading;
+---
+
+<Container>
+  <Label>e-books</Label>
+  <Content>
+    <ul class="flex flex-col gap-y-1">
+      {items.map(({ title, author, url }) => (
+        <li>
+          {url ? (
+            <a
+              class="text-accent hover:underline"
+              href={url}
+              target="_blank"
+              rel="noopener"
+              >{title}</a
+            >
+          ) : (
+            <span>{title}</span>
+          )}
+          <span class="text-dim"> ~ {author}</span>
+        </li>
+      ))}
+    </ul>
+  </Content>
+</Container>

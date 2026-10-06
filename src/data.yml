@@ -81,6 +81,13 @@ uses:
     items:
       - key: mtb
         value: Orbea Oiz M30
+reading:
+  items:
+    - title: themouseless.dev
+      url: https://themouseless.dev
+      author: Matthieu Cneude
+    - title: Thinking, Fast and Slow
+      author: Daniel Kahneman
 contact:
   command: mutt -f firstname.lastname[at]gmail.com
   email: firstname.lastname[at]gmail.com

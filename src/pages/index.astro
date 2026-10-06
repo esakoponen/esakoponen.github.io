@@ -5,6 +5,7 @@ import Btop from "@/components/tui/btop/index.astro";
 import Lazygit from "@/components/tui/lazygit/index.astro";
 import Mutt from "@/components/tui/mutt/index.astro";
 import Ranger from "@/components/tui/ranger/index.astro";
+import Reading from "@/components/tui/reading/index.astro";
 import config from "@/config.json";
 import Layout from "@/layouts/default.astro";
 
@@ -85,6 +86,11 @@ const info: {
   <section id="uses" class="my-10">
     <SectionTitle title="off the clock" />
     <Btop />
+  </section>
+
+  <section id="reading" class="my-10">
+    <SectionTitle title="reading" />
+    <Reading />
   </section>
 
   <section id="contact" class="my-10">
