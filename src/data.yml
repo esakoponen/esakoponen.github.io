@@ -71,12 +71,11 @@ uses:
   memory:
     label: MEM [now]
     usage:
-      - text: building personal blog
-      - text: updating this page
-      - text: playing civ 6 hotseat
+      - text: personal blog
+      - text: this page
+      - text: civ 6 hotseat
         note: (105/250 turns)
-      - text: developing tournament planner
-        note: (drafting)
+      - text: drafting tournament planner
   afk:
     label: afk
     items:
