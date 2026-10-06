@@ -75,19 +75,11 @@ uses:
   memory:
     label: MEM [working memory]
     usage:
-      - label: blog
-        percent: 5
-        detail: modifying astro template
-      - label: portfolio
-        percent: 90
-        detail: updating
-      - label: civ 6
-        percent: 42
-        detail: hotseat
+      - text: building personal blog
+      - text: updating this page
+      - text: playing civ 6 hotseat
         note: (105/250 turns)
-      - label: dev
-        percent: 5
-        detail: tournament planner
+      - text: developing tournament planner
         note: (drafting)
   afk:
     label: afk

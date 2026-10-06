@@ -1,0 +1,58 @@
+---
+import Container from "@/components/tui/commons/container.astro";
+import Content from "@/components/tui/commons/content.astro";
+import Label from "@/components/tui/commons/label.astro";
+
+export interface Props {
+  title?: string;
+  usage: {
+    text: string;
+    note?: string;
+  }[];
+}
+
+const { title = "MEM [working memory]", usage } = Astro.props;
+---
+
+<Container>
+  <Label>{title}</Label>
+  <Content>
+    <ul class="font-mono flex flex-col gap-y-1">
+      {usage.map(({ text, note }) => (
+        <li class="flex items-baseline gap-2">
+          <span class="spinner text-accent" aria-hidden="true"></span>
+          <span class="text-fg">
+            {text}
+            {note && <span class="text-dim"> {note}</span>}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </Content>
+</Container>
+
+<style>
+  .spinner::before {
+    content: "⠋";
+    animation: spin 0.8s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% { content: "⠋"; }
+    10% { content: "⠙"; }
+    20% { content: "⠹"; }
+    30% { content: "⠸"; }
+    40% { content: "⠼"; }
+    50% { content: "⠴"; }
+    60% { content: "⠦"; }
+    70% { content: "⠧"; }
+    80% { content: "⠇"; }
+    90% { content: "⠏"; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spinner::before {
+      animation: none;
+    }
+  }
+</style>
