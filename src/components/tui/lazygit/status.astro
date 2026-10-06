@@ -38,8 +38,7 @@ if (behind > 0) syncBits.push(`↓${behind} behind`);
 				</>
 			)}
       <span class="text-dim"
-        >+{status.modified}
-        modified · {status.untracked} untracked</span
+        >{`+${status.modified} modified · ${status.untracked} untracked`}</span
       >
     </Paragraph>
   </Content>

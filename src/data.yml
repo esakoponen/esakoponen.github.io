@@ -30,7 +30,7 @@ host:
   memory: 32 GB
   resolution: 3840x2400
 about:
-  command: lazygit --view bio
+  command: git log --oneline
   status:
     branch: main
     since: 2026
@@ -39,29 +39,21 @@ about:
     modified: 2
     untracked: 3
   bio:
-    - icon: M
-      text: Astro + Tailwind template for fastfetch-style portfolios
-    - icon: M
-      text: Single source of truth — content in YAML, generated in JSON
-    - icon: M
-      text: 26 distro themes, switchable from the header with no flash
-    - icon: M
-      text: Projects synced from GitHub, cached locally for 1 hour
-    - icon: M
-      text: SEO out of the box — OG, Twitter, JSON-LD, robots.txt
-    - icon: M
-      text: TypeScript strict, biome, bun test, GitHub Actions
-    - icon: ??
-      text: Fork this repo and edit data.yml to make it yours
+    - text: 'feat: make AI agents measurable (2026)'
+    - text: 'feat: carbon-footprint APIs for energy customers (2024)'
+    - text: 'lead: mentor trainees on a cloud-native app (2024-25)'
+    - text: 'arch: develop cis in energy sector (2016–24)'
+    - text: 'feat: robot route planning for PCB test lines (2013–16)'
+    - text: 'feat: research reconfigurable robotic assembly (2008–10)'
   paths:
     - name: main
       current: true
-    - name: feature/themes
-    - name: feature/seo
-    - name: feature/sync-script
-    - name: feature/yaml-config
-    - name: fix/components
-    - name: docs/readme
+    - name: feature/agentic-backends
+    - name: feature/llm-evaluation
+    - name: explore/elixir
+    - name: explore/pi
+    - name: explore/spec-driven-development
+    - name: chore/web-security
 uses:
   command: btop --view stack — daily usage && hardware
   cpu:

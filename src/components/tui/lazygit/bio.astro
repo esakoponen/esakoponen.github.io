@@ -5,7 +5,7 @@ import Label from "@/components/tui/commons/label.astro";
 import Paragraph from "@/components/tui/commons/paragraph.astro";
 
 export interface Item {
-  icon: string;
+  icon?: string;
   text: string;
 }
 
@@ -17,11 +17,11 @@ const { items } = Astro.props;
 ---
 
 <Container>
-  <Label>bio (modified)</Label>
+  <Label>bio</Label>
   <Content>
     {items.map(item => (
       <Paragraph>
-        <span class="font-medium text-accent" class:list={[item.icon === "??" ? "text-dim" :  ""]}>{item.icon}</span>  <span class:list={[item.icon === "??" ? "" :  "ml-2"]}>{item.text}</span>
+        {item.icon && <span class="font-medium text-accent mr-2" class:list={[item.icon === "??" ? "text-dim" :  ""]}>{item.icon}</span>}<span>{item.text}</span>
       </Paragraph>
     ))}
   </Content>
