@@ -25,8 +25,8 @@ current: arch
 booted_at: '2026-09-03'
 host:
   name: xps
-  cpu: Intel Core i7-10750H (12) @ 5.00 GHz
-  gpu: NVIDIA GeForce GTX 1650 Ti Mobile
+  cpu: Intel Core i7-10750H
+  gpu: NVIDIA GeForce GTX 1650 Ti
   memory: 32 GB
   resolution: 3840x2400
 about:
