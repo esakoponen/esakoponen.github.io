@@ -14,21 +14,21 @@ site:
   twitter: ''
   locale: en
   type: website
-  default_theme: debian
+  default_theme: arch
   footer:
     status: session closed
     errors: 0
     warnings: 0
     uptime: 5y
 
-current: debian
-booted_at: '2026-08-20T10:00:00Z'
+current: arch
+booted_at: '2026-09-03'
 host:
   name: devbox
-  cpu: AMD Ryzen 7 7700
-  gpu: AMD Radeon RX 7700 XT
-  memory: 32 GB DDR5
-  resolution: 2560x1440
+  cpu: Intel Core i7-10750H (12) @ 5.00 GHz
+  gpu: NVIDIA GeForce GTX 1650 Ti Mobile
+  memory: 32 GB
+  resolution: 3840x2400
 about:
   command: lazygit --view bio
   status:
@@ -37,7 +37,7 @@ about:
     ahead: 1
     behind: 0
     modified: 2
-    untracked: 0
+    untracked: 3
   bio:
     - icon: M
       text: Astro + Tailwind template for fastfetch-style portfolios
@@ -69,13 +69,13 @@ uses:
     usage:
       - label: editor
         percent: 100
-        detail: zed / vscode
+        detail: neovim
       - label: terminal
         percent: 60
-        detail: alacritty + tmux
+        detail: kitty
       - label: browser
         percent: 20
-        detail: firefox / brave
+        detail: firefox
       - label: notes
         percent: 10
         detail: obsidian
@@ -89,23 +89,23 @@ uses:
         detail: tokyo night
       - label: font
         percent: 40
-        detail: JetBrains Mono
+        detail: Noto Sans Mono
   memory:
-    used: 16
-    total: 32
+    used: 5
+    total: 31
     theme: tokyo night
     themePercent: 50
   hardware:
     label: hardware
-    device: devbox
-    ram: 32 GB DDR5
-    os: Debian 13 Trixie
+    device: Dell XPS
+    ram: 32 GB
+    os: Arch Linux x86_64
   peripherals:
     label: peripherals
-    keyboard: Keychron K6
-    mouse: Logitech G Pro
+    keyboard: steelseries
+    mouse: Logitech
     headphones: generic
-    monitor: 2 x 27" 1440p
+    monitor: 16" 4K built-in
 contact:
   command: mutt -f user@example.com
   email: user@example.com
@@ -130,4 +130,6 @@ projects_ui:
   command: ranger /home/astro/projects
   root: /home/astro
 projects:
-  - https://github.com/withastro/astro
+  - https://github.com/esakoponen/esakoponen.github.io
+  - https://github.com/esakoponen/suurhamara-kronikka
+  - https://github.com/esakoponen/job-interview-training

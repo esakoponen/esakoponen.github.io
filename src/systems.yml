@@ -1,15 +1,15 @@
 - slug: arch
   os: Arch Linux (rolling)
   pkg: pacman
-  kernel: 6.16.4-arch1-1
+  kernel: 6.18.52-1-lts
   shell: zsh
   de: hyprland
   wm: hyprland
   theme: catppuccin-mocha
   terminal: kitty
   init: systemd
-  pkgs: '1487'
-  font: Iosevka Term
+  pkgs: '650'
+  font: Noto Sans Mono
   colors:
     bg: '#08090b'
     panel: '#0e1014'
