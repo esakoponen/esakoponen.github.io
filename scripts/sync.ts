@@ -89,8 +89,7 @@ interface Data {
 	contact: {
 		command: string;
 		email: string;
-		inbox: { from: string; date: string; href: string }[];
-		hints: Record<string, unknown>[];
+		inbox: { from: string; date?: string; href?: string }[];
 	};
 	projects_ui: {
 		command: string;

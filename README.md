@@ -77,7 +77,7 @@ booted_at:       # ISO timestamp for the live-computed uptime
 host:            # hardware info (manual, doesn't change often)
 about:           # bio, paths, lazygit-style status block
 uses:            # btop: cpu/memory/hardware/peripherals
-contact:         # email, inbox, hints
+contact:         # email, inbox
 projects_ui:     # projects section command + root
 projects:        # list of GitHub repo URLs to fetch
 ```

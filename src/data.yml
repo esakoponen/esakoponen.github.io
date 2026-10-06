@@ -1,9 +1,9 @@
 site:
-  title: astro-distro
+  title: esakoponen
   description: Astro + Tailwind fastfetch-style portfolio template. TUI components, themeable systems, projects synced from GitHub via YAML.
   url: https://esakoponen.github.io
-  author: astro
-  handle_suffix: distro
+  author: esakoponen
+  handle_suffix: github
   image: /og.png
   image_width: 1200
   image_height: 630
@@ -24,7 +24,7 @@ site:
 current: arch
 booted_at: '2026-09-03'
 host:
-  name: devbox
+  name: xps
   cpu: Intel Core i7-10750H (12) @ 5.00 GHz
   gpu: NVIDIA GeForce GTX 1650 Ti Mobile
   memory: 32 GB
@@ -107,28 +107,15 @@ uses:
     headphones: generic
     monitor: 16" 4K built-in
 contact:
-  command: mutt -f user@example.com
-  email: user@example.com
+  command: mutt -f firstname.lastname[at]gmail.com
+  email: firstname.lastname[at]gmail.com
   inbox:
     - from: github.com
-      date: 15 Aug 2024
-      href: https://github.com
-    - from: hello@example.com
-      date: 10 Jan 2025
-      href: mailto:hello@example.com
-    - from: example.com
-      date: 10 Jan 2025
-      href: https://example.com
-  hints:
-    - key: j/k
-      action: next
-    - key: enter
-      action: open
-    - key: q
-      action: quit
+      href: https://github.com/esakoponen
+    - from: firstname.lastname[at]gmail.com
 projects_ui:
-  command: ranger /home/astro/projects
-  root: /home/astro
+  command: ranger /home/mossrift
+  root: /home/mossrift
 projects:
   - https://github.com/esakoponen/esakoponen.github.io
   - https://github.com/esakoponen/suurhamara-kronikka
