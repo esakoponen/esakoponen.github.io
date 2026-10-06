@@ -16,5 +16,3 @@ export const themes: Theme[] = systems.map((distro) => distro.slug).sort();
 
 export const DEFAULT_THEME: Theme = config.site.default_theme as Theme;
 
-/** clave de localStorage — replicada literalmente en el script anti-FOUC del layout */
-export const STORAGE_KEY = "theme";

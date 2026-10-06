@@ -47,7 +47,6 @@ All 26: `arch`, `archcraft`, `debian`, `ubuntu`, `linuxmint`, `kali`, `fedora`, 
 └── src/
     ├── components/
     │   ├── seo.astro                 # <title>, OG, Twitter Card, JSON-LD…
-    │   ├── distro-toggle.astro       # theme picker
     │   ├── section-title.astro
     │   ├── logos/                    # fastfetch-style ASCII logos
     │   └── tui/                      # TUI-style sections

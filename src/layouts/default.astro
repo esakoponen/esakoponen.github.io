@@ -1,9 +1,8 @@
 ---
-import DistroToggle from "@/components/distro-toggle.astro";
 import Seo from "@/components/seo.astro";
 import config from "@/config.json";
 import { FONT_FAMILY, fontStack } from "@/lib/fonts";
-import { DEFAULT_THEME, STORAGE_KEY, themes } from "@/lib/themes";
+import { DEFAULT_THEME, themes } from "@/lib/themes";
 import "../styles/global.css";
 
 interface Props {
@@ -46,13 +45,6 @@ const themeFontsCss = config.systems
     <meta name="generator" content={Astro.generator}>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <Seo title={title} description={description} />
-    <!-- aplica el tema guardado antes del primer paint para evitar el flash -->
-    <script is:inline define:vars={{ themes, storageKey: STORAGE_KEY }}>
-      const stored = localStorage.getItem(storageKey);
-      if (stored && themes.includes(stored)) {
-        document.documentElement.dataset.theme = stored;
-      }
-    </script>
     <style is:global set:html={distroVisibilityCss}></style>
     <style is:global set:html={themeColorsCss}></style>
     <style is:global set:html={themeFontsCss}></style>
@@ -78,8 +70,6 @@ const themeFontsCss = config.systems
           <span>uptime {config.site.footer?.uptime ?? "0y"}</span>
           <span class="text-border">·</span>
         </div>
-        <span class="text-border">·</span>
-        <DistroToggle />
       </div>
     </footer>
   </body>
