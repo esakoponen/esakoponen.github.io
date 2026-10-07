@@ -84,6 +84,9 @@ interface Data {
 		memory: Record<string, unknown>;
 		afk: Record<string, unknown>;
 	};
+	reading: {
+		items: { title: string; author: string; url?: string }[];
+	};
 	contact: {
 		command: string;
 		email: string;
@@ -275,6 +278,7 @@ async function main() {
 				projects,
 			},
 			uses: data.uses,
+			reading: data.reading,
 			contact: data.contact,
 		},
 	};
