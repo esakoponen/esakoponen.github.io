@@ -72,10 +72,12 @@ uses:
     label: MEM [now]
     usage:
       - text: personal blog
+        note: (wip)
       - text: this page
       - text: civ 6 hotseat
-        note: (105/250 turns)
-      - text: drafting tournament planner
+        note: (107/250 turns)
+      - text: tournament planner
+        note: (wip)
   afk:
     label: afk
     items:
