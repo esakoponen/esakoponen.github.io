@@ -1,6 +1,6 @@
-# astro-distro
+# Personal GitHub page based on astro-distro
 
-![astro-distro](./docs/screenshots/themes/theme-debian.png)
+![astro-distro](./docs/screenshots/themes/theme-arch.png)
 
 Astro template for a `fastfetch` / `neofetch`-style terminal portfolio. Two YAML files drive the site, project metadata is synced from GitHub, and the generated `config.json` is gitignored — clean repo, single source of truth, reproducible builds.
 
@@ -8,14 +8,7 @@ Astro template for a `fastfetch` / `neofetch`-style terminal portfolio. Two YAML
 
 ## Themes
 
-26 distro color schemes, switchable from the header. Four shown below:
-
-<div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-  <img src="./docs/screenshots/themes/theme-debian.png" width="49%" alt="debian theme" />
-  <img src="./docs/screenshots/themes/theme-arch.png" width="49%" alt="arch theme" />
-  <img src="./docs/screenshots/themes/theme-linuxmint.png" width="49%" alt="linuxmint theme" />
-  <img src="./docs/screenshots/themes/theme-kali.png" width="49%" alt="kali theme" />
-</div>
+Original astro-distro template had 26 distro color schemes - which have been disabled.
 
 All 26: `arch`, `archcraft`, `debian`, `ubuntu`, `linuxmint`, `kali`, `fedora`, `opensuse`, `alpine`, `gentoo`, `manjaro`, `centos`, `void`, `nixos`, `slackware`, `pop`, `elementary`, `cachyos`, `windows`, `macos`, `android`, `raspbian`, `proxmox`, `truenas_scale`, `parrot`, `gnu`. Each one defined in [`src/systems.yml`](./src/systems.yml) with its own color palette, kernel, shell, DE, WM, theme, terminal, font, and ASCII logo (fetched from [fastfetch-cli](https://github.com/fastfetch-cli/fastfetch)).
 
